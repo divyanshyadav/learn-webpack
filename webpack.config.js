@@ -48,13 +48,16 @@ class LogBuildStartPlugin {
 
 /*
 ############################## 
-####### Configuration #######
+####### Configuration ########
 ############################## 
 */
 
 module.exports = {
     mode: env,
-    entry: './src/index.js',
+    entry: [
+        './src/index.js',
+        'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000&reload=true'
+    ],
     module: {
         rules: [
             babelLoader,
@@ -67,7 +70,12 @@ module.exports = {
         new HtmlWebpackPlugin({
             title: 'Learn Webpack',
             template: './src/index.ejs'
-        })
+        }),
+
+        // for hot reloading
+        new webpack.optimize.OccurrenceOrderPlugin(),
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.NoEmitOnErrorsPlugin()
     ],
     output: {
         filename: 'bundle.js',

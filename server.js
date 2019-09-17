@@ -14,6 +14,6 @@ app.use(webpackHotMiddleware(compiler));
 
 const port = process.env.PORT
 
-app.listen(port,  () => {
-    open(`http://localhost:${port}`)
+app.listen(port, async () => {
+    await open(`http://localhost:${port}`)
 })

@@ -1,16 +1,19 @@
 const express = require('express')
 const webpack = require('webpack')
+const open = require('open');
+
 const webpackDevMiddleware = require('webpack-dev-middleware')
 const webpackHotMiddleware = require('webpack-hot-middleware')
-const config = require('./webpack.config')
+const webpackConfig = require('./webpack.config')
 
-const compiler = webpack(config)
 const app = express()
+const compiler = webpack(webpackConfig)
 
 app.use(webpackDevMiddleware(compiler))
 app.use(webpackHotMiddleware(compiler));
 
 const port = process.env.PORT
-app.listen(port, () => {
-    console.log(`listening on port ${port}!\n`);
+
+app.listen(port,  () => {
+    open(`http://localhost:${port}`)
 })

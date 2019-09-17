@@ -2,7 +2,7 @@ const path = require('path');
 
 const env = process.env.ENV || 'development'
 const buildsFolderName = 'builds'
-const distName = mode === 'production' ? 'dist' : 'dev'
+const distName = env === 'production' ? 'dist' : 'dev'
 
 /*
 ############################## 

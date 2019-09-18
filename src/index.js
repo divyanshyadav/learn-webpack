@@ -1,11 +1,6 @@
 import './styles.css'
 import greet from './greet'
+import createPerson from './person'
 
-class Person {
-    constructor(name) {
-        this.name = name
-    }
-}
-
-const person = new Person('Shipra')
-greet(person.name)
+const person = createPerson('Roy')
+greet(person.getName())

@@ -9,8 +9,8 @@ const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 */
 
 const env = process.env.NODE_ENV || 'development'
-const buildsFolderName = 'builds'
-const distName = env === 'production' ? 'dist' : 'dev'
+const buildsFolderName = 'bundles'
+const distName = env === 'production' ? 'prod' : 'dev'
 
 /*
 ############################## 

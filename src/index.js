@@ -1,8 +1,5 @@
 import './styles.css'
-import arrowFunction from './arrowFunction'
-
-console.log('Hello World!!')
-arrowFunction()
+import greet from './greet'
 
 class Person {
     constructor(name) {
@@ -11,4 +8,4 @@ class Person {
 }
 
 const person = new Person('Shipra')
-console.log(person)
+greet(person.name)

@@ -14,11 +14,6 @@ module.exports = {
       maxChunks: 3,
     })
   ],
-  optimization: {
-    splitChunks: {
-      minChunks: 1,
-    }
-  },
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),

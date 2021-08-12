@@ -11,7 +11,11 @@ module.exports = {
       template: 'index.html'
     }),
     new webpack.optimize.LimitChunkCountPlugin({
-      maxChunks: 3,
+      maxChunks: 10,
+    }),
+    new webpack.IgnorePlugin({
+      resourceRegExp: /\.test/,
+      contextRegExp: /src/,
     })
   ],
   output: {

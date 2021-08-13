@@ -14,8 +14,19 @@ module.exports = {
       maxChunks: 10,
     }),
     new webpack.IgnorePlugin({
-      resourceRegExp: /\.test/,
-      contextRegExp: /src/,
+      resourceRegExp: /\.test(.js|)$/,
+      contextRegExp: /src$/,
+    }),
+    new webpack.IgnorePlugin({
+      resourceRegExp: /.*/,
+      contextRegExp: /moment\\locale$/,
+    }),
+    new webpack.IgnorePlugin({
+      checkResource(resource, context) {
+        console.log({ resource, context });
+        // do something with resource
+        return false;
+      },
     })
   ],
   output: {

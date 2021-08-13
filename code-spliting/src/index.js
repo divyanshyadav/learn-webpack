@@ -1,3 +1,5 @@
+const moment = require('moment');
+
 function getInputEle() {
     const inputEle = document.createElement('input')
     inputEle.addEventListener('change', (e) => {
@@ -6,6 +8,8 @@ function getInputEle() {
             comp()
         })
     })
+
+    moment()
     
     return inputEle
 }
